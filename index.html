@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Char Map — Copy Symbols, Arrows, Math &amp; Special Characters | S3eidat Tools</title>
+<meta name="description" content="Special characters by category: arrows, math, currency, punctuation, box drawing, Greek, accented Latin and Arabic marks. Search by name or code point, click to copy, get HTML entity, CSS and JS escapes.">
+<meta property="og:title" content="Char Map — symbols, arrows, math and special characters">
+<meta property="og:description" content="Click to copy any special character, with its code point, HTML entity, CSS and JS escape. Runs in your browser.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="char-map">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Char Map</h1>
+    <p>Arrows, math, currency, typography, box drawing, Greek, accents and Arabic marks. Click to copy, and get the code point, HTML entity, CSS and JavaScript escapes.</p>
+  </section>
+
+  <section class="card">
+    <label class="sr" for="q">Search characters</label>
+    <input type="search" class="input cm-q" id="q" dir="auto" autocomplete="off" spellcheck="false" placeholder="Search by name, character, code point or entity: arrow, euro, U+00E9, &amp;rarr, شدة…">
+    <div class="cm-cats mt" id="cats" role="group" aria-label="Category"></div>
+  </section>
+
+  <div class="cm-layout mt">
+    <section class="card">
+      <div class="row between">
+        <h2 id="title">All characters</h2>
+        <span class="faint" id="count"></span>
+      </div>
+      <div class="cm-grid" id="grid" role="list"></div>
+      <div class="empty" id="empty" hidden><b>Nothing found</b>Try a different word, or type a code point like U+2192.</div>
+    </section>
+
+    <aside class="card cm-detail">
+      <div class="cm-big" id="big" dir="ltr">→</div>
+      <b class="cm-name" id="dname"></b>
+      <div class="tbl-wrap mt">
+        <table class="tbl cm-codes"><tbody id="codes"></tbody></table>
+      </div>
+      <label class="field mt" for="collect">Collected <span class="faint">(every character you click is added here)</span>
+        <span class="cm-collect">
+          <input type="text" class="input" id="collect" dir="auto" spellcheck="false" placeholder="Click characters to build a string">
+          <button class="btn icon" id="ccopy" aria-label="Copy collected text" title="Copy"><svg class="i"><use href="#i-copy"/></svg></button>
+          <button class="btn icon ghost" id="cclear" aria-label="Clear collected text" title="Clear"><svg class="i"><use href="#i-trash"/></svg></button>
+        </span>
+      </label>
+    </aside>
+  </div>
+</main>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

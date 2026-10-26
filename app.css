@@ -1,0 +1,27 @@
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.cm-q { font-size: 16px; min-height: 46px; }
+.cm-cats { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: thin; }
+.cm-cats button { flex: none; padding: 7px 12px; border-radius: 999px; font-weight: 600; font-size: 13px; color: var(--text-2); background: var(--surface-2); border: 1px solid var(--line); }
+.cm-cats button:hover { color: var(--text); border-color: var(--line-strong); }
+.cm-cats button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+.cm-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 14px; align-items: start; }
+.cm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(48px, 1fr)); gap: 4px; margin-top: 12px; max-height: 600px; overflow-y: auto; padding: 2px; }
+.cm-c { aspect-ratio: 1; font-size: 22px; line-height: 1; border-radius: 10px; display: grid; place-items: center; background: var(--surface-2); border: 1px solid var(--line); color: var(--text); transition: background 120ms, border-color 120ms, transform 120ms; font-family: var(--font), "Segoe UI Symbol", "Noto Sans Symbols", "Noto Sans Arabic", serif; }
+.cm-c:hover, .cm-c:focus-visible { background: var(--accent-soft); border-color: var(--accent); transform: translateY(-1px); }
+.cm-c:active { transform: scale(.95); }
+.cm-c.cm-inv, .cm-big.cm-inv { font: 700 10px/1 var(--mono); color: var(--accent); letter-spacing: .02em; }
+.cm-detail { position: sticky; top: 76px; }
+.cm-big { display: grid; place-items: center; height: 120px; font-size: 76px; line-height: 1; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--line); font-family: var(--font), "Segoe UI Symbol", "Noto Sans Symbols", "Noto Sans Arabic", serif; }
+.cm-big.cm-inv { font-size: 26px; }
+.cm-name { display: block; margin-top: 10px; text-transform: capitalize; font-size: 15px; }
+.cm-codes th { font-size: 11px; white-space: nowrap; padding: 7px 8px; }
+.cm-codes td { padding: 5px 8px; font-size: 12.5px; word-break: break-all; }
+.cm-codes td.cm-cp { width: 36px; padding: 2px 4px; }
+.cm-codes tr:last-child th, .cm-codes tr:last-child td { border-bottom: 0; }
+.cm-collect { display: flex; gap: 6px; }
+.cm-collect .input { flex: 1; min-width: 0; font-size: 16px; }
+@media (max-width: 860px) {
+  .cm-layout { grid-template-columns: minmax(0, 1fr); }
+  .cm-detail { position: static; order: -1; }
+  .cm-big { height: 90px; font-size: 56px; }
+}
